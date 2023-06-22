@@ -1,0 +1,25 @@
+version: "3"
+services:
+  nextjs:
+    container_name: nextjs
+    image: containerregistry.uspdigital.usp.br/michelet/imagens/front_estagios
+    # env_file:
+    #   - .env       
+    #   - .env.production
+    #   - .env.local
+    #restart: always
+    # environment:
+    #   SECRET : ${SECRET}
+    #   EMAIL_SERVER_HOST : ${EMAIL_SERVER_HOST}
+    #   EMAIL_FROM : ${EMAIL_FROM}
+    #   EMAIL_SERVER_PORT : ${EMAIL_SERVER_PORT}
+    #   EMAIL_SERVER_USER : ${EMAIL_SERVER_USER}
+    #   EMAIL_SERVER_PASSWORD : ${EMAIL_SERVER_PASSWORD}
+    #   NEXTAUTH_SECRET : ${NEXTAUTH_SECRET}
+    #   NEXTAUTH_URL : ${NEXTAUTH_URL}
+    #   FAUNA_SECRET_KEY : ${FAUNA_SECRET_KEY}
+    #   URL_API_BACKEND : ${URL_API_BACKEND}
+  nginx:
+    image: containerregistry.uspdigital.usp.br/michelet/imagens/nginx_estagios
+    ports:
+      - "3001:8080"
